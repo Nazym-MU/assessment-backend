@@ -5,7 +5,11 @@ import surveyRoutes from './survey.js';
 
 const app = express();
 
-app.use(cors());
+
+app.use(cors({
+    origin: 'https://mastercard-ai-solutions.vercel.app/',
+  }));
+
 app.use(express.json());
 
 connectDB();
