@@ -5,17 +5,17 @@ import surveyRoutes from './survey.js';
 
 const app = express();
 
-
+// CORS setup
 app.use(cors({
-    origin: ['https://mastercard-ai-solutions.vercel.app/'],
-    credentials: true,
-    methods: ['GET', 'POST']
-  }));
+  origin: 'https://mastercard-ai-solutions.vercel.app',
+}));
 
-app.use(express.json());
+app.use(express.json()); // Parse JSON bodies
 
+// Connect to MongoDB
 connectDB();
 
+// Use survey routes
 app.use('/', surveyRoutes);
 
 const PORT = process.env.PORT || 5000;
