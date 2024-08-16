@@ -57,7 +57,7 @@ const questions = [
     scoreRange: '1-2: Behind, 3-4: On Track, 5: Ahead',
 },
   {
-    qquestionId: 'Q6_CEO',
+    questionId: 'Q6_CEO',
     role: 'C-Suite',
     text: 'Have you established an AI ethics committee or similar oversight body?',
     type: 'single-choice',
@@ -69,7 +69,7 @@ const questions = [
   {
     questionId: 'Q7_CEO',
     role: 'C-Suite',
-    text: 'How do you ensure alignment between AI initiatives and overall business strategy?',
+    text: 'How do you ensure alignment between AI initiatives and overall bank strategy?',
     type: 'open-ended',
     category: 'Strategy',
     weight: 0.9,
@@ -77,7 +77,7 @@ const questions = [
 },
   {
     questionId: 'Q1_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     text: 'In which areas has your bank implemented AI solutions?',
     type: 'open-ended',
     category: 'Use-cases',
@@ -86,7 +86,7 @@ const questions = [
   },
   {
     questionId: 'Q2_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     text: 'How would you rate the quality and accessibility of your bank\'s data for AI training?',
     type: 'single-choice',
     options: ['1', '2', '3', '4', '5'],
@@ -96,7 +96,7 @@ const questions = [
   },
   {
     questionId: 'Q3_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     text: 'How do you ensure the explainability of AI models, especially in critical areas like credit scoring?',
     type: 'open-ended',
     category: 'Ethics',
@@ -105,7 +105,7 @@ const questions = [
   },
   {
     questionId: 'Q4_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     text: 'What measures do you have in place to protect personal identifiable information (PII) when training AI models?',
     type: 'open-ended',
     category: 'Ethics',
@@ -114,7 +114,7 @@ const questions = [
   },
   {
     questionId: 'Q5_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     text: 'How often do you conduct security audits on AI systems?',
     type: 'single-choice',
     options: ['Annually or less', 'Quarterly', 'Monthly or more'],
@@ -124,7 +124,7 @@ const questions = [
   },
   {
     questionId: 'Q6_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     text: 'Do you have processes in place to monitor and mitigate AI bias?',
     type: 'single-choice',
     options: ['No', 'In Development', 'Yes, active'],
@@ -182,7 +182,7 @@ const questions = [
   },
   {
     questionId: 'Q1_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     text: 'What percentage of your staff has received training on AI technologies and their implications?',
     type: 'single-choice',
     options: ['Less than 20%', '20-60%', 'More than 60%'],
@@ -192,7 +192,7 @@ const questions = [
   },
   {
     questionId: 'Q2_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     text: 'Do you have a strategy to attract and retain AI talent?',
     type: 'single-choice',
     options: ['No', 'Basic strategy', 'Comprehensive strategy'],
@@ -202,7 +202,7 @@ const questions = [
   },
   {
     questionId: 'Q3_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     text: 'How do you assess the AI literacy of new hires, especially for technical positions?',
     type: 'open-ended',
     category: 'Recruitment',
@@ -211,7 +211,7 @@ const questions = [
   },
   {
     questionId: 'Q4_HR',
-    role: 'Human Resources',
+    role: 'Human Resource Manager',
     text: 'Have you developed training programs to help employees adapt to AI-driven changes in their roles?',
     type: 'single-choice',
     options: ['No', 'In Development', 'Yes, active'],
@@ -221,7 +221,7 @@ const questions = [
   },
   {
     questionId: 'Q5_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     text: 'How do you address employee concerns about job displacement due to AI?',
     type: 'open-ended',
     category: 'Change Management',
@@ -230,7 +230,7 @@ const questions = [
   },
   {
     questionId: 'Q1_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     text: 'To what extent has AI been integrated into your customer service operations?',
     type: 'single-choice',
     options: ['1', '2', '3', '4', '5'],
@@ -240,7 +240,7 @@ const questions = [
   },
   {
     questionId: 'Q2_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     text: 'What types of AI-powered customer service tools are you currently using?',
     type: 'open-ended',
     category: 'Customer Experience',
@@ -249,7 +249,7 @@ const questions = [
   },  
   {
     questionId: 'Q3_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     text: 'How do you measure the impact of AI on customer satisfaction?',
     type: 'open-ended',
     category: 'Customer Service',
@@ -258,7 +258,7 @@ const questions = [
   },
   {
     questionId: 'Q4_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     text: 'Do you have a process for handling customer complaints or concerns related to AI-driven decisions?',
     type: 'single-choice',
     options: ['No', 'Basic process', 'Comprehensive process'],
@@ -268,7 +268,7 @@ const questions = [
   },
   {
     questionId: 'Q5_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     text: 'How do you ensure that AI-powered customer interactions align with your bank\'s brand voice and values?',
     type: 'open-ended',
     category: 'Customer Service',
@@ -388,7 +388,7 @@ const recommendations = [
     role: 'C-Suite',
     recommendations: {
         behind: "Develop a comprehensive AI strategy immediately. Form an AI taskforce to create an implementation roadmap. Prioritize cybersecurity and fraud detection for initial AI projects to form customer trust, and then proceed to other areas for AI implementation. Educate board members on AI's potential in banking.",
-        onTrack: "Refine your AI strategy to align with business goals. Establish an AI ethics committee. Stay informed about AI advancements and adjust your strategy accordingly.",
+        onTrack: "Refine your AI strategy to align with bank goals. Establish an AI ethics committee. Stay informed about AI advancements and adjust your strategy accordingly.",
         ahead: "Explore advanced AI applications in predictive analytics and personalized financial advice. Continuously improve AI governance and invest in cutting-edge research to maintain your competitive edge."
       }
   },
@@ -396,7 +396,7 @@ const recommendations = [
     questionId: 'Q2_CEO',
     role: 'C-Suite',
     recommendations: {
-        behind: "Conduct a cost-benefit analysis of potential AI projects. Reallocate funds from less critical areas. Present a clear business case to the board, highlighting AI's ROI and competitive advantages.",
+        behind: "Conduct a cost-benefit analysis of potential AI projects. Reallocate funds from less critical areas. Present a clear use case to the board, highlighting AI's ROI and competitive advantages.",
         onTrack: "Prioritize high-impact AI projects. Gradually increase the budget as you demonstrate successful implementations. Explore cloud-based AI services to maximize budget impact.",
         ahead: "Invest in both short-term implementations and long-term research. You could establish an AI innovation lab. Allocate resources for continuous staff training. Regularly showcase tangible benefits to justify the high investment."
       }
@@ -407,7 +407,7 @@ const recommendations = [
     recommendations: {
         behind: "Make AI a regular board meeting agenda item. Organize AI awareness workshops for board members. Form a dedicated AI oversight committee at the board level.",
         onTrack: "Provide detailed updates on ongoing AI projects and their impact. Encourage board members to actively shape the AI strategy. Arrange AI application demos for the board.",
-        ahead: "Analyze AI's long-term impact on your business model. Invite external AI experts for fresh perspectives. Ensure discussions cover ethical considerations and potential regulatory changes."
+        ahead: "Invite external AI experts for fresh perspectives. Ensure discussions cover ethical considerations and potential regulatory changes."
       }
   },
   {
@@ -424,7 +424,7 @@ const recommendations = [
     role: 'C-Suite',
     recommendations: {
         behind: "Attend executive education programs on AI in banking. Join AI-focused banking consortiums. Schedule regular briefings with your AI and risk management teams.",
-        onTrack: "Deepen knowledge in AI ethics and regulatory implications. Engage with AI vendors to understand latest developments. Implement mentoring programs to share AI knowledge across the organization.",
+        onTrack: "Deepen knowledge in AI ethics and regulatory implications. Engage with AI vendors to understand latest developments. Implement mentoring programs to share AI knowledge across the bank.",
         ahead: "Leverage your knowledge to drive innovation and strategic decisions. Participate in regulatory discussions shaping AI governance in finance. Author thought leadership pieces to establish your bank as an AI leader."
       }
   },
@@ -441,14 +441,14 @@ const recommendations = [
     questionId: 'Q7_CEO',
     role: 'C-Suite',
     recommendations: {
-        behind: "Map current AI projects to specific business objectives. Develop an evaluation framework for new AI initiatives based on strategic fit. Appoint an AI strategy officer to oversee alignment.",
-        onTrack: "Develop KPIs linking AI project outcomes to strategic goals. Implement regular review sessions with AI teams and business units. Create cross-functional teams for major AI initiatives.",
+        behind: "Map current AI projects to specific bank's objectives. Develop an evaluation framework for new AI initiatives based on strategic fit. Appoint an AI strategy officer to oversee alignment.",
+        onTrack: "Develop KPIs linking AI project outcomes to strategic goals. Implement regular review sessions with AI teams. Create cross-functional teams for major AI initiatives.",
         ahead: "Implement advanced portfolio management for AI projects. Conduct AI-focused scenario planning exercises. Establish an external AI advisory board for fresh strategic perspectives."
      }
   },
   {
     questionId: 'Q1_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     recommendations: {
         behind: "Prioritize AI implementation in fraud detection. Develop a roadmap for expanding AI use cases.",
         onTrack: "Expand AI use to credit scoring and AML. Evaluate the performance of existing AI solutions. Identify opportunities for AI in risk management and operational efficiency.",
@@ -457,7 +457,7 @@ const recommendations = [
   },
   {
     questionId: 'Q2_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     recommendations: {
         behind: "Implement a data quality management system. Centralize data from disparate sources. Invest in data cleaning and standardization tools.",
         onTrack: "Enhance data governance practices. Implement advanced data validation checks. Develop a data catalog for easy discovery and access.",
@@ -466,7 +466,7 @@ const recommendations = [
   },
   {
     questionId: 'Q3_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     recommendations: {
         behind: "Implement SHAP (SHapley Additive exPlanations) values for model interpretation. Use simple, interpretable models for critical decisions. Develop a process for human review of AI decisions.",
         onTrack: "Implement LIME (Local Interpretable Model-agnostic Explanations) alongside SHAP. Create detailed documentation of model logic and decision processes. Establish an AI explainability review board.",
@@ -475,7 +475,7 @@ const recommendations = [
   },
   {
     questionId: 'Q4_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     recommendations: {
         behind: "Implement robust data encryption at rest and in transit. Use data masking techniques for sensitive information. Establish strict access controls for AI training data.",
         onTrack: "Implement advanced data anonymization techniques. Use differential privacy in AI model training. Regularly audit data access and usage in AI systems.",
@@ -484,7 +484,7 @@ const recommendations = [
   },
   {
     questionId: 'Q5_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     recommendations: {
         behind: "Implement quarterly security audits for AI systems. Develop an AI-specific security framework. Train IT staff on AI security best practices.",
         onTrack: "Increase audit frequency for critical AI systems. Implement continuous monitoring tools for AI security. Conduct regular penetration testing on AI models.",
@@ -493,7 +493,7 @@ const recommendations = [
 },
 {
     questionId: 'Q6_IT',
-    role: 'IT',
+    role: 'IT and Data Science',
     recommendations: {
         behind: "Implement basic bias detection tools in AI model development. Train developers on recognizing and mitigating AI bias. Establish guidelines for diverse and representative training data.",
         onTrack: "Implement advanced bias detection and mitigation tools. Establish a diverse AI ethics review board. Regularly test AI models for various types of bias.",
@@ -547,7 +547,7 @@ const recommendations = [
 },
 {
     questionId: 'Q1_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     recommendations: {
         behind: "Develop a basic AI awareness program for all staff. Prioritize training for teams directly involved with AI projects. Partner with online learning platforms for scalable AI education.",
         onTrack: "Expand AI training to cover more advanced topics. Implement role-specific AI training modules. Encourage staff to obtain AI certifications.",
@@ -556,7 +556,7 @@ const recommendations = [
 },
 {
     questionId: 'Q2_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     recommendations: {
         behind: "Develop partnerships with universities for AI talent recruitment. Create AI-focused job descriptions and career paths. Offer competitive compensation packages for AI roles.",
         onTrack: "Implement an AI talent development program. Offer ongoing learning opportunities in AI. Create cross-functional AI project teams to enhance job satisfaction.",
@@ -565,7 +565,7 @@ const recommendations = [
 },
 {
     questionId: 'Q3_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     recommendations: {
         behind: "Develop a basic AI skills assessment for technical roles. Include AI-related questions in interviews. Require AI project portfolios for senior technical positions.",
         onTrack: "Implement standardized AI proficiency tests. Use AI-based tools to assess candidates' technical skills. Conduct case study interviews focused on AI problem-solving.",
@@ -574,11 +574,11 @@ const recommendations = [
 },
 {
     questionId: 'Q4_HR',
-    role: 'Human Resources',
+    role: 'Human Resources Manager',
     recommendations: {
         behind: "Identify roles most impacted by AI implementation. Develop basic AI adaptation training modules. Partner with department heads to address specific AI-related skill gaps.",
         onTrack: "Implement personalized AI upskilling plans for employees. Offer hands-on workshops on working alongside AI systems. Develop change management programs for AI transitions.",
-        ahead: "Create an AI transformation academy within the organization. Implement AI-assisted career path planning for employees. Develop programs to transition employees into new AI-related roles."
+        ahead: "Create an AI transformation academy within the bank. Implement AI-assisted career path planning for employees. Develop programs to transition employees into new AI-related roles."
       }
 },
 {
@@ -592,7 +592,7 @@ const recommendations = [
 },
 {
     questionId: 'Q1_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     recommendations: {
         behind: "Implement basic AI chatbots for frequently asked questions. Pilot AI-powered call routing systems. Train staff on working alongside AI in customer service.",
         onTrack: "Enhance AI chatbots with natural language processing. Implement AI for customer sentiment analysis. Use AI for personalized customer communication.",
@@ -601,7 +601,7 @@ const recommendations = [
 },
 {
     questionId: 'Q2_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     recommendations: {
         behind: "Implement AI chatbots for basic customer queries. Use AI for automated email responses. Pilot AI-powered voice assistants.",
         onTrack: "Enhance chatbots with sentiment analysis capabilities. Implement AI for customer behavior prediction. Use AI for personalized product recommendations.",
@@ -610,7 +610,7 @@ const recommendations = [
 },
 {
     questionId: 'Q3_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     recommendations: {
         behind: "Implement basic customer satisfaction surveys for AI interactions. Track resolution times for AI-handled queries. Monitor customer feedback on AI-powered services.",
         onTrack: "Implement AI-specific Net Promoter Score (NPS) tracking. Use sentiment analysis on customer interactions with AI. Conduct regular A/B testing of AI vs. human customer service.",
@@ -619,7 +619,7 @@ const recommendations = [
 },
 {
     questionId: 'Q4_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     recommendations: {
         behind: "Develop a basic escalation process for AI-related complaints. Train customer service staff on explaining AI decisions. Implement a feedback loop to improve AI systems based on complaints.",
         onTrack: "Create a dedicated team for handling AI-related customer concerns. Implement a system for easy human override of AI decisions. Develop clear communication templates for explaining AI decisions to customers.",
@@ -628,7 +628,7 @@ const recommendations = [
 },
 {
     questionId: 'Q5_Customer',
-    role: 'Customer Service',
+    role: 'Customer Service Team',
     recommendations: {
         behind: "Develop basic brand guidelines for AI communications. Regularly review AI-generated content for brand alignment. Train AI models on brand-specific language and tone.",
         onTrack: "Implement AI content generation tools trained on brand voice. Use sentiment analysis to ensure AI interactions reflect brand values. Conduct regular brand alignment audits of AI systems.",
@@ -655,7 +655,7 @@ const recommendations = [
   },
   {
     questionId: 'Q3_Marketing',
-    role: 'Marketing Manager',
+    role: 'Marketing',
     recommendations: {
       behind: "Implement attribution modeling for AI campaigns. Set up A/B testing frameworks to compare AI vs. traditional campaigns. Develop KPIs specific to AI-driven marketing initiatives.",
       onTrack: "Use multi-touch attribution models for complex customer journeys. Implement real-time ROI tracking dashboards. Develop predictive ROI models for AI campaigns.",
@@ -664,6 +664,7 @@ const recommendations = [
   },
   {
     questionId: 'Q4_Marketing',
+    role: 'Marketing Manager',
     recommendations: {
       behind: "Implement a basic opt-out mechanism for AI-driven marketing. Clearly communicate how customer data is used in AI marketing. Train staff on handling opt-out requests.",
       onTrack: "Develop a user-friendly preference center for granular control over AI marketing. Implement automated systems to honor opt-out requests across all channels. Regularly audit opt-out effectiveness.",
