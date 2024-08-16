@@ -7,7 +7,9 @@ const app = express();
 
 
 app.use(cors({
-    origin: 'https://mastercard-ai-solutions.vercel.app/',
+    origin: ['https://mastercard-ai-solutions.vercel.app/'],
+    credentials: true,
+    methods: ['GET', 'POST']
   }));
 
 app.use(express.json());
