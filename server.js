@@ -10,12 +10,11 @@ app.use(cors({
   origin: 'https://mastercard-ai-solutions.vercel.app',
 }));
 
-app.use(express.json()); // Parse JSON bodies
+app.use(express.json());
 
 // Connect to MongoDB
 connectDB();
 
-// Use survey routes
 app.use('/', surveyRoutes);
 
 const PORT = process.env.PORT || 5000;

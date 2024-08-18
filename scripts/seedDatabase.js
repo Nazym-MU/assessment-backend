@@ -14,7 +14,7 @@ const questions = [
     options: ['1', '2', '3', '4', '5'],
     category: 'Strategy',
     weight: 1.0,
-    scoreRange: '1-2: Behind, 3-4: On Track, 5: Ahead'
+    scoreRange: '1-2: Behind; 3-4: On Track; 5: Ahead'
   },
   {
     questionId: 'Q2_CEO',
@@ -24,7 +24,7 @@ const questions = [
     options: ['No', 'Yes, but limited', 'Yes, significant'],
     category: 'Budget',
     weight: 0.8,
-    scoreRange: 'No: Behind, Yes, but limited: On Track, Yes, significant: Ahead',
+    scoreRange: 'No: Behind; Yes, but limited: On Track; Yes, significant: Ahead',
   },
   {
     questionId: 'Q3_CEO',
@@ -34,7 +34,7 @@ const questions = [
     options: ['Never', 'Rarely', 'Occasionally', 'Frequently', 'Always'],
     category: 'Strategy',
     weight: 0.7,
-    scoreRange: 'Never-Rarely: Behind, Occasionally: On track, Frequently-Always: Ahead',
+    scoreRange: 'Never: Behind; Rarely: Behind; Occasionally: On track; Frequently: Ahead; Always: Ahead',
    },
   {
     questionId: 'Q4_CEO',
@@ -44,7 +44,7 @@ const questions = [
     options: ['No', 'In Progress', 'Yes, comprehensive'],
     category: 'Strategy',
     weight: 0.9,
-    scoreRange: 'No: Behind, In Progress: On track, Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Progress: On track; Yes, comprehensive: Ahead',
 },
   {
     questionId: 'Q5_CEO',
@@ -54,7 +54,7 @@ const questions = [
     options: ['1', '2', '3', '4', '5'],
     category: 'Strategy',
     weight: 0.8,
-    scoreRange: '1-2: Behind, 3-4: On Track, 5: Ahead',
+    scoreRange: '1-2: Behind; 3-4: On Track; 5: Ahead',
 },
   {
     questionId: 'Q6_CEO',
@@ -64,7 +64,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Ethics',
     weight: 0.8, 
-    scoreRange: 'No: Behind, Planning to: On track, Yes, active: Ahead',
+    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
 },
   {
     questionId: 'Q7_CEO',
@@ -73,7 +73,7 @@ const questions = [
     type: 'open-ended',
     category: 'Strategy',
     weight: 0.9,
-    scoreRange: 'No clear process: Behind, Some alignment efforts: On track, Systematic alignment: Ahead',
+    scoreRange: 'No clear process: Behind; Some alignment efforts: On track; Systematic alignment: Ahead',
 },
   {
     questionId: 'Q1_IT',
@@ -82,7 +82,7 @@ const questions = [
     type: 'open-ended',
     category: 'Use-cases',
     weight: 0.8,
-    scoreRange: '0-1 area: Behind, 2-3 areas: On Track, 4+ areas: Ahead'
+    scoreRange: '0-1 area: Behind; 2-3 areas: On Track; 4+ areas: Ahead'
   },
   {
     questionId: 'Q2_IT',
@@ -92,7 +92,7 @@ const questions = [
     options: ['1', '2', '3', '4', '5'],
     category: 'Data Quality',
     weight: 0.9,
-    scoreRange: '1-2: Behind, 3-4: On Track, 5: Ahead'
+    scoreRange: '1-2: Behind; 3-4: On Track; 5: Ahead'
   },
   {
     questionId: 'Q3_IT',
@@ -101,7 +101,7 @@ const questions = [
     type: 'open-ended',
     category: 'Ethics',
     weight: 0.8,
-    scoreRange: 'No measures: Behind, Basic measures: On Track, Advanced measures: Ahead',
+    scoreRange: 'No measures: Behind; Basic measures: On Track; Advanced measures: Ahead',
   },
   {
     questionId: 'Q4_IT',
@@ -110,7 +110,7 @@ const questions = [
     type: 'open-ended',
     category: 'Ethics',
     weight: 0.9,
-    scoreRange: 'Basic encryption: Behind, Encryption + anonymization: On Track, Advanced measures: Ahead',
+    scoreRange: 'Basic encryption: Behind; Encryption + anonymization: On Track; Advanced measures: Ahead',
   },
   {
     questionId: 'Q5_IT',
@@ -120,7 +120,7 @@ const questions = [
     options: ['Annually or less', 'Quarterly', 'Monthly or more'],
     category: 'Audit',
     weight: 0.8,
-    scoreRange: 'Annually or less: Behind, Quarterly: On track, Monthly or more: Ahead',
+    scoreRange: 'Annually or less: Behind; Quarterly: On track; Monthly or more: Ahead',
   },
   {
     questionId: 'Q6_IT',
@@ -130,17 +130,17 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Ethics',
     weight: 0.8,
-    scoreRange: 'No: Behind, In Development: On track, Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Development: On track; Yes, comprehensive: Ahead',
   },
   {
     questionId: 'Q1_Risk',
     role: 'Risk and Compliance',
-    text: 'How confident are you in your bank\'s ability to comply with data protection regulations (e.g., GDPR) when using AI?',
+    text: 'How confident are you in your bank\'s ability to comply with data protection regulations when using AI?',
     type: 'single-choice',
     options: ['1', '2', '3', '4', '5'],
     category: 'Compliance',
     weight: 0.9,
-    scoreRange: '1-2: Behind, 3-4: On Track, 5: Ahead'
+    scoreRange: '1-2: Behind; 3-4: On Track; 5: Ahead'
   },
   {
     questionId: 'Q2_Risk',
@@ -150,7 +150,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Compliance',
     weight: 0.8,
-    scoreRange: 'No: Behind, In Development: On track, Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
   },
   {
     questionId: 'Q3_Risk',
@@ -159,7 +159,7 @@ const questions = [
     type: 'open-ended',
     category: 'Ethics',
     weight: 0.8,
-    scoreRange: 'Limited transparency: Behind, Some measures: On track, Comprehensive approach: Ahead',
+    scoreRange: 'Limited transparency: Behind; Some measures: On track; Comprehensive approach: Ahead',
   },
   {
     questionId: 'Q4_Risk',
@@ -169,7 +169,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Ethics',
     weight: 0.9,
-    scoreRange: 'No: Behind, In Progress: On track, Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
   },
   {
     questionId: 'Q5_Risk',
@@ -178,7 +178,7 @@ const questions = [
     type: 'open-ended',
     category: 'Ethics',
     weight: 0.9,
-    scoreRange: 'Manual processes: Behind, Some automation: On track, Advanced monitoring: Ahead',
+    scoreRange: 'Manual processes: Behind; Some automation: On track; Advanced monitoring: Ahead',
   },
   {
     questionId: 'Q1_HR',
@@ -188,7 +188,7 @@ const questions = [
     options: ['Less than 20%', '20-60%', 'More than 60%'],
     category: 'Training',
     weight: 0.8,
-    scoreRange: 'Less than 20%: Behind, 20-60%: On Track, More than 60%: Ahead'
+    scoreRange: 'Less than 20%: Behind; 20-60%: On Track; More than 60%: Ahead'
   },
   {
     questionId: 'Q2_HR',
@@ -198,7 +198,7 @@ const questions = [
     options: ['No', 'Basic strategy', 'Comprehensive strategy'],
     category: 'Talent Management',
     weight: 0.9,
-    scoreRange: 'No: Behind, Basic strategy: On track, Comprehensive strategy: Ahead',
+    scoreRange: 'No: Behind; Basic strategy: On track; Comprehensive strategy: Ahead',
   },
   {
     questionId: 'Q3_HR',
@@ -207,7 +207,7 @@ const questions = [
     type: 'open-ended',
     category: 'Recruitment',
     weight: 0.7,
-    scoreRange: 'No assessment: Behind, Basic assessment: On track, Advanced assessment: Ahead',
+    scoreRange: 'No assessment: Behind; Basic assessment: On track; Advanced assessment: Ahead',
   },
   {
     questionId: 'Q4_HR',
@@ -217,7 +217,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Training',
     weight: 0.8,
-    scoreRange: 'No: Behind, In development: On track, Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
   },
   {
     questionId: 'Q5_HR',
@@ -226,54 +226,54 @@ const questions = [
     type: 'open-ended',
     category: 'Change Management',
     weight: 0.7,
-    scoreRange: 'No clear approach: Behind, Some measures: On track, Comprehensive strategy: Ahead',
+    scoreRange: 'No clear approach: Behind; Some measures: On track; Comprehensive strategy: Ahead',
   },
   {
     questionId: 'Q1_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     text: 'To what extent has AI been integrated into your customer service operations?',
     type: 'single-choice',
     options: ['1', '2', '3', '4', '5'],
     category: 'Customer Experience',
     weight: 0.8,
-    scoreRange: '1: Behind, 2-3: On Track, 4-5: Ahead'
+    scoreRange: '1: Behind; 2-3: On Track; 4-5: Ahead'
   },
   {
     questionId: 'Q2_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     text: 'What types of AI-powered customer service tools are you currently using?',
     type: 'open-ended',
     category: 'Customer Experience',
     weight: 0.7,
-    scoreRange: '0-1 tool: Behind, 2-3 tools: On Track, 4+ tools: Ahead',
+    scoreRange: '0-1 tool: Behind; 2-3 tools: On Track; 4+ tools: Ahead',
   },  
   {
     questionId: 'Q3_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     text: 'How do you measure the impact of AI on customer satisfaction?',
     type: 'open-ended',
-    category: 'Customer Service',
+    category: 'Customer Center',
     weight: 0.8,
-    scoreRange: 'No clear metrics: Behind, Basic metrics: On track, Advanced analytics: Ahead',
+    scoreRange: 'No clear metrics: Behind; Basic metrics: On track; Advanced analytics: Ahead',
   },
   {
     questionId: 'Q4_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     text: 'Do you have a process for handling customer complaints or concerns related to AI-driven decisions?',
     type: 'single-choice',
     options: ['No', 'Basic process', 'Comprehensive process'],
     category: 'Customer Experience',
     weight: 0.9,
-    scoreRange: 'No: Behind, Basic process: On track, Comprehensive process: Ahead',
+    scoreRange: 'No: Behind; Basic process: On track; Comprehensive process: Ahead',
   },
   {
     questionId: 'Q5_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     text: 'How do you ensure that AI-powered customer interactions align with your bank\'s brand voice and values?',
     type: 'open-ended',
-    category: 'Customer Service',
+    category: 'Customer Center',
     weight: 0.7,
-    scoreRange: 'No measures: Behind, Some measures: On track, Comprehensive approach: Ahead',
+    scoreRange: 'No measures: Behind; Some measures: On track; Comprehensive approach: Ahead',
   },
   {
     questionId: 'Q1_Marketing',
@@ -283,7 +283,7 @@ const questions = [
     options: ['1', '2', '3', '4', '5'],
     category: 'Personalization',
     weight: 0.8,
-    scoreRange: '1: Behind, 2-3: On Track, 4-5: Ahead'
+    scoreRange: '1: Behind; 2-3: On Track; 4-5: Ahead'
   },
   {
     questionId: 'Q2_Marketing',
@@ -292,7 +292,7 @@ const questions = [
     type: 'open-ended',
     category: 'Data Usage',
     weight: 0.7,
-    scoreRange: 'Basic demographic data: Behind, Behavioral data: On Track, Comprehensive data: Ahead',
+    scoreRange: 'Basic demographic data: Behind; Behavioral data: On Track; Comprehensive data: Ahead',
   },
   {
     questionId: 'Q3_Marketing',
@@ -302,7 +302,7 @@ const questions = [
     options: ['Basic metrics', 'Advanced metrics', 'AI-powered analytics'],
     category: 'Performance Measurement',
     weight: 0.8,
-    scoreRange: 'Basic metrics: Behind, Advanced metrics: On Track, AI-powered analytics: Ahead',
+    scoreRange: 'Basic metrics: Behind; Advanced metrics: On Track; AI-powered analytics: Ahead',
   },
   {
     questionId: 'Q4_Marketing',
@@ -312,16 +312,16 @@ const questions = [
     options: ['No', 'Basic system', 'Advanced system'],
     category: 'Ethics',
     weight: 0.9,
-    scoreRange: 'No system: Behind, Basic system: On Track, Advanced system: Ahead',
+    scoreRange: 'No system: Behind; Basic system: On Track; Advanced system: Ahead',
   },
   {
     questionId: 'Q5_Marketing',
     role: 'Marketing Manager',
-    text: 'How do you ensure that AI-driven marketing campaigns comply with regulations like GDPR?',
+    text: 'How do you ensure that AI-driven marketing campaigns comply with regulations?',
     type: 'open-ended',
     category: 'Compliance',
     weight: 0.9,
-    scoreRange: 'Manual checks: Behind, Some automated processes: On Track, Fully integrated compliance: Ahead',
+    scoreRange: 'Manual checks: Behind; Some automated processes: On Track; Fully integrated compliance: Ahead',
   },
   {
     questionId: 'Q1_Cyber',
@@ -331,7 +331,7 @@ const questions = [
     options: ['1', '2', '3', '4', '5'],
     category: 'Cybersecurity',
     weight: 0.9,
-    scoreRange: '1-2: Behind, 3-4: On Track, 5: Ahead'
+    scoreRange: '1-2: Behind; 3-4: On Track; 5: Ahead'
   },
   {
     questionId: 'Q2_Cyber',
@@ -340,7 +340,7 @@ const questions = [
     type: 'open-ended',
     category: 'Fraud Prevention',
     weight: 0.8,
-    scoreRange: 'Basic rule-based systems: Behind, ML models: On Track, Advanced AI systems: Ahead',
+    scoreRange: 'Basic rule-based systems: Behind; ML models: On Track; Advanced AI systems: Ahead',
   },
 {
     questionId: 'Q3_Cyber',
@@ -349,7 +349,7 @@ const questions = [
     type: 'open-ended',
     category: 'Risk Assessment',
     weight: 0.8,
-    scoreRange: 'Manual assessment: Behind, Semi-automated: On Track, AI-driven assessment: Ahead',
+    scoreRange: 'Manual assessment: Behind; Semi-automated: On Track; AI-driven assessment: Ahead',
 },
 {
     questionId: 'Q4_Cyber',
@@ -359,7 +359,7 @@ const questions = [
     options: ['Annually or less', 'Quarterly', 'Monthly or more'],
     category: 'Model Maintenance',
     weight: 0.7,
-    scoreRange: 'Annually or less: Behind, Quarterly: On Track, Monthly or more: Ahead'
+    scoreRange: 'Annually or less: Behind; Quarterly: On Track; Monthly or more: Ahead'
 },
 {
     questionId: 'Q5_Cyber',
@@ -369,7 +369,7 @@ const questions = [
     options: ['No specific protocols', 'Basic protocols', 'Advanced protocols'],
     category: 'Incident Response',
     weight: 0.9,
-    scoreRange: 'No specific protocols: Behind, Basic protocols: On Track, Advanced protocols: Ahead',
+    scoreRange: 'No specific protocols: Behind; Basic protocols: On Track; Advanced protocols: Ahead',
 },
 {
     questionId: 'Q6_Cyber',
@@ -378,7 +378,7 @@ const questions = [
     type: 'open-ended',
     category: 'Cybersecurity',
     weight: 0.9,
-    scoreRange: 'Basic measures: Behind, Advanced measures: On Track, State-of-the-art: Ahead',
+    scoreRange: 'Basic measures: Behind; Advanced measures: On Track; State-of-the-art: Ahead',
 },
 ];
 
@@ -592,7 +592,7 @@ const recommendations = [
 },
 {
     questionId: 'Q1_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     recommendations: {
         behind: "Implement basic AI chatbots for frequently asked questions. Pilot AI-powered call routing systems. Train staff on working alongside AI in customer service.",
         onTrack: "Enhance AI chatbots with natural language processing. Implement AI for customer sentiment analysis. Use AI for personalized customer communication.",
@@ -601,7 +601,7 @@ const recommendations = [
 },
 {
     questionId: 'Q2_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     recommendations: {
         behind: "Implement AI chatbots for basic customer queries. Use AI for automated email responses. Pilot AI-powered voice assistants.",
         onTrack: "Enhance chatbots with sentiment analysis capabilities. Implement AI for customer behavior prediction. Use AI for personalized product recommendations.",
@@ -610,7 +610,7 @@ const recommendations = [
 },
 {
     questionId: 'Q3_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     recommendations: {
         behind: "Implement basic customer satisfaction surveys for AI interactions. Track resolution times for AI-handled queries. Monitor customer feedback on AI-powered services.",
         onTrack: "Implement AI-specific Net Promoter Score (NPS) tracking. Use sentiment analysis on customer interactions with AI. Conduct regular A/B testing of AI vs. human customer service.",
@@ -619,7 +619,7 @@ const recommendations = [
 },
 {
     questionId: 'Q4_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     recommendations: {
         behind: "Develop a basic escalation process for AI-related complaints. Train customer service staff on explaining AI decisions. Implement a feedback loop to improve AI systems based on complaints.",
         onTrack: "Create a dedicated team for handling AI-related customer concerns. Implement a system for easy human override of AI decisions. Develop clear communication templates for explaining AI decisions to customers.",
@@ -628,7 +628,7 @@ const recommendations = [
 },
 {
     questionId: 'Q5_Customer',
-    role: 'Customer Service Team',
+    role: 'Customer Center Lead',
     recommendations: {
         behind: "Develop basic brand guidelines for AI communications. Regularly review AI-generated content for brand alignment. Train AI models on brand-specific language and tone.",
         onTrack: "Implement AI content generation tools trained on brand voice. Use sentiment analysis to ensure AI interactions reflect brand values. Conduct regular brand alignment audits of AI systems.",

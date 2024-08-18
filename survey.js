@@ -39,8 +39,11 @@ router.post('/api/survey', async (req, res) => {
           const processedResponse = await processOpenEndedResponse(response.answer, question);
           processedAnswer = processedResponse.summary;
           status = processedResponse.status;
+          console.log(`Processed open-ended response: ${JSON.stringify(processedResponse)}`);
+          console.log(`Status: ${status}`);
         } else {
           status = determineStatus(question, processedAnswer);
+          console.log(`Status: ${status}`);
         }
   
         return {
@@ -62,35 +65,66 @@ router.post('/api/survey', async (req, res) => {
     if (!summary) {
       const prompt = createStructuredPrompt(validPromptData);
       const gptResponse = await openai.chat.completions.create({
-        model: "gpt-3.5-turbo",
+        model: "gpt-4o-mini",
         messages: [{ role: "system", content: prompt }],
         max_tokens: 1000,
       });
-      summary = gptResponse.choices[0].message.content;
+      
+      try {
+        summary = JSON.parse(gptResponse.choices[0].message.content);
+      } catch (error) {
+        console.error('Error parsing OpenAI response:', error);
+        summary = null;
+      }
+
+      if (!summary || typeof summary !== 'object') {
+        summary = {
+          maturityLevel: calculateOverallMaturity(validPromptData),
+          summary: "Unable to generate a detailed summary due to an error.",
+          strengths: [],
+          weaknesses: [],
+          detailedRecommendations: "Please review the individual responses for more information.",
+          bulletRecommendations: []
+        };
+      }
+
+      const requiredProperties = ['maturityLevel', 'summary', 'strengths', 'weaknesses', 'detailedRecommendations', 'bulletRecommendations'];
+      requiredProperties.forEach(prop => {
+        if (!(prop in summary)) {
+          summary[prop] = prop === 'maturityLevel' ? calculateOverallMaturity(validPromptData) :
+                          (Array.isArray(summary[prop]) ? [] : "");
+        }
+      });
+
       cache.set(cacheKey, summary);
     }
 
+    console.log('Final summary:', JSON.stringify(summary, null, 2));
+    console.log('Detailed recommendations:', JSON.stringify(validPromptData, null, 2));
+
     res.json({ summary, detailedRecommendations: validPromptData });
-} catch (error) {
+  } catch (error) {
     console.error('Error processing survey:', error);
     res.status(500).json({ error: 'An error occurred while processing the survey' });
   }
 });
 
+
 function determineStatus(question, answer) {
-    if (question.type === 'single-choice') {
-      const rangeParts = question.scoreRange.split(',');
-      for (const part of rangeParts) {
-        const [range, status] = part.split(':').map(s => s.trim());
-        if (range.includes(answer)) {
-          return status.toLowerCase();
-        }
+  if (question.type === 'single-choice') {
+    const rangeParts = question.scoreRange.split(';');
+    for (const part of rangeParts) {
+      const [range, status] = part.split(':').map(s => s.trim());
+      if (range.toLowerCase().includes(answer.toLowerCase())) {
+        return status.toLowerCase();
       }
-    } else if (question.type === 'open-ended') {
-      return answer.status; 
     }
-    return 'unknown';
+  } else if (question.type === 'open-ended') {
+    return answer.status; 
   }
+  console.warn(`Unmatched status for question: ${question.text}, answer: ${answer}`);
+  return 'unknown';
+}
 
   async function processOpenEndedResponse(answer, question) {
     const prompt = `
@@ -106,22 +140,22 @@ function determineStatus(question, answer) {
         "summary": "Brief summary of the response",
         "status": "behind" or "onTrack" or "ahead",
         "strengths": ["Strength 1", "Strength 2"] (or [] if none),
-        "weaknesses": ["Weakness 1", "Weakness 2"],
+        "weaknesses": ["Weakness 1", "Weakness 2"] (or [] if none),
         "recommendations": ["Recommendation 1", "Recommendation 2"]
       }
       
       Ensure that the status aligns with the provided scoring range.
     `;
+    console.log("Open-ended prompt:", prompt);
 
   const gptResponse = await openai.chat.completions.create({
-    model: "gpt-3.5-turbo",
+    model: "gpt-4o-mini",
     messages: [{ role: "system", content: prompt }],
     max_tokens: 1000,
   });
     
   try {
     const rawResponse = gptResponse.choices[0].message.content;
-    console.log("Raw AI Response:", rawResponse);
   
     const reportData = JSON.parse(rawResponse);
 
@@ -149,21 +183,21 @@ function determineStatus(question, answer) {
 }
 
 function calculateOverallMaturity(promptData) {
-    const statusScores = { ahead: 2, ontrack: 1, behind: 0 };
-    let totalScore = 0;
-    let totalWeight = 0;
-  
-    promptData.forEach(data => {
-      const score = statusScores[data.status] || 0;
-      totalScore += score * data.weight;
-      totalWeight += data.weight;
-    });
-  
-    const averageScore = totalScore / totalWeight;
-    if (averageScore > 1.5) return 'ahead';
-    if (averageScore >= 0.5) return 'on track';
-    return 'behind';
-  }
+  const statusScores = { ahead: 2, ontrack: 1, behind: 0, unknown: 0 };
+  let totalScore = 0;
+  let totalWeight = 0;
+
+  promptData.forEach(data => {
+    const score = statusScores[data.status] || 0;
+    totalScore += score * data.weight;
+    totalWeight += data.weight;
+  });
+
+  const averageScore = totalWeight > 0 ? totalScore / totalWeight : 0;
+  if (averageScore > 1.3) return 'ahead';
+  if (averageScore >= 0.5) return 'on track';
+  return 'behind';
+}
 
   function createStructuredPrompt(promptData) {
     const structuredData = promptData.map(d => ({
@@ -180,7 +214,7 @@ function calculateOverallMaturity(promptData) {
   
     return `You are an AI consultant providing an assessment of a bank's AI maturity. Based on the following survey responses, generate a structured report in JSON format. Address the report directly to the ${role}, using "you" and "your" instead of "the bank".
   
-  The JSON should have the following structure:
+    Provide your response as a valid JSON object without any additional formatting or markdown. The JSON should have the following structure:
   
   {
     "maturityLevel": "${overallMaturity}",
