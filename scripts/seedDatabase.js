@@ -34,7 +34,7 @@ const questions = [
     options: ['Never', 'Rarely', 'Occasionally', 'Frequently', 'Always'],
     category: 'Strategy',
     weight: 0.7,
-    scoreRange: 'Never: Behind; Rarely: Behind; Occasionally: On track; Frequently: Ahead; Always: Ahead',
+    scoreRange: 'Never: Behind; Rarely: Behind; Occasionally: On Track; Frequently: Ahead; Always: Ahead',
    },
   {
     questionId: 'Q4_CEO',
@@ -44,7 +44,7 @@ const questions = [
     options: ['No', 'In Progress', 'Yes, comprehensive'],
     category: 'Strategy',
     weight: 0.9,
-    scoreRange: 'No: Behind; In Progress: On track; Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Progress: On Track; Yes, comprehensive: Ahead',
 },
   {
     questionId: 'Q5_CEO',
@@ -64,7 +64,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Ethics',
     weight: 0.8, 
-    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
+    scoreRange: 'No: Behind; In Development: On Track; Yes, active: Ahead',
 },
   {
     questionId: 'Q7_CEO',
@@ -73,7 +73,7 @@ const questions = [
     type: 'open-ended',
     category: 'Strategy',
     weight: 0.9,
-    scoreRange: 'No clear process: Behind; Some alignment efforts: On track; Systematic alignment: Ahead',
+    scoreRange: 'No clear process: Behind; Some alignment efforts: On Track; Systematic alignment: Ahead',
 },
   {
     questionId: 'Q1_IT',
@@ -120,7 +120,7 @@ const questions = [
     options: ['Annually or less', 'Quarterly', 'Monthly or more'],
     category: 'Audit',
     weight: 0.8,
-    scoreRange: 'Annually or less: Behind; Quarterly: On track; Monthly or more: Ahead',
+    scoreRange: 'Annually or less: Behind; Quarterly: On Track; Monthly or more: Ahead',
   },
   {
     questionId: 'Q6_IT',
@@ -130,7 +130,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Ethics',
     weight: 0.8,
-    scoreRange: 'No: Behind; In Development: On track; Yes, comprehensive: Ahead',
+    scoreRange: 'No: Behind; In Development: On Track; Yes, comprehensive: Ahead',
   },
   {
     questionId: 'Q1_Risk',
@@ -150,7 +150,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Compliance',
     weight: 0.8,
-    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
+    scoreRange: 'No: Behind; In Development: On Track; Yes, active: Ahead',
   },
   {
     questionId: 'Q3_Risk',
@@ -159,7 +159,7 @@ const questions = [
     type: 'open-ended',
     category: 'Ethics',
     weight: 0.8,
-    scoreRange: 'Limited transparency: Behind; Some measures: On track; Comprehensive approach: Ahead',
+    scoreRange: 'Limited transparency: Behind; Some measures: On Track; Comprehensive approach: Ahead',
   },
   {
     questionId: 'Q4_Risk',
@@ -169,7 +169,7 @@ const questions = [
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Ethics',
     weight: 0.9,
-    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
+    scoreRange: 'No: Behind; In Development: On Track; Yes, active: Ahead',
   },
   {
     questionId: 'Q5_Risk',
@@ -178,7 +178,7 @@ const questions = [
     type: 'open-ended',
     category: 'Ethics',
     weight: 0.9,
-    scoreRange: 'Manual processes: Behind; Some automation: On track; Advanced monitoring: Ahead',
+    scoreRange: 'Manual processes: Behind; Some automation: On Track; Advanced monitoring: Ahead',
   },
   {
     questionId: 'Q1_HR',
@@ -198,7 +198,7 @@ const questions = [
     options: ['No', 'Basic strategy', 'Comprehensive strategy'],
     category: 'Talent Management',
     weight: 0.9,
-    scoreRange: 'No: Behind; Basic strategy: On track; Comprehensive strategy: Ahead',
+    scoreRange: 'No: Behind; Basic strategy: On Track; Comprehensive strategy: Ahead',
   },
   {
     questionId: 'Q3_HR',
@@ -207,17 +207,17 @@ const questions = [
     type: 'open-ended',
     category: 'Recruitment',
     weight: 0.7,
-    scoreRange: 'No assessment: Behind; Basic assessment: On track; Advanced assessment: Ahead',
+    scoreRange: 'No assessment: Behind; Basic assessment: On Track; Advanced assessment: Ahead',
   },
   {
     questionId: 'Q4_HR',
-    role: 'Human Resource Manager',
+    role: 'Human Resources Manager',
     text: 'Have you developed training programs to help employees adapt to AI-driven changes in their roles?',
     type: 'single-choice',
     options: ['No', 'In Development', 'Yes, active'],
     category: 'Training',
     weight: 0.8,
-    scoreRange: 'No: Behind; In Development: On track; Yes, active: Ahead',
+    scoreRange: 'No: Behind; In Development: On Track; Yes, active: Ahead',
   },
   {
     questionId: 'Q5_HR',
@@ -226,7 +226,7 @@ const questions = [
     type: 'open-ended',
     category: 'Change Management',
     weight: 0.7,
-    scoreRange: 'No clear approach: Behind; Some measures: On track; Comprehensive strategy: Ahead',
+    scoreRange: 'No clear approach: Behind; Some measures: On Track; Comprehensive strategy: Ahead',
   },
   {
     questionId: 'Q1_Customer',
@@ -254,7 +254,7 @@ const questions = [
     type: 'open-ended',
     category: 'Customer Center',
     weight: 0.8,
-    scoreRange: 'No clear metrics: Behind; Basic metrics: On track; Advanced analytics: Ahead',
+    scoreRange: 'No clear metrics: Behind; Basic metrics: On Track; Advanced analytics: Ahead',
   },
   {
     questionId: 'Q4_Customer',
@@ -264,7 +264,7 @@ const questions = [
     options: ['No', 'Basic process', 'Comprehensive process'],
     category: 'Customer Experience',
     weight: 0.9,
-    scoreRange: 'No: Behind; Basic process: On track; Comprehensive process: Ahead',
+    scoreRange: 'No: Behind; Basic process: On Track; Comprehensive process: Ahead',
   },
   {
     questionId: 'Q5_Customer',
@@ -273,7 +273,7 @@ const questions = [
     type: 'open-ended',
     category: 'Customer Center',
     weight: 0.7,
-    scoreRange: 'No measures: Behind; Some measures: On track; Comprehensive approach: Ahead',
+    scoreRange: 'No measures: Behind; Some measures: On Track; Comprehensive approach: Ahead',
   },
   {
     questionId: 'Q1_Marketing',
@@ -297,7 +297,7 @@ const questions = [
   {
     questionId: 'Q3_Marketing',
     role: 'Marketing Manager',
-    text: 'To what extent are you using AI for personalized marketing campaigns?',
+    text: 'How do you measure the ROI of AI-driven marketing campaigns?',
     type: 'single-choice',
     options: ['Basic metrics', 'Advanced metrics', 'AI-powered analytics'],
     category: 'Performance Measurement',
